@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private static final String URL = "jdbc:postgresql://localhost:5432/sistema_biblioteca";
-    private static final String USUARIO = "postgres";
-    private static final String SENHA = System.getenv("DB_PASSWORD");
+    private static final String URL = "jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:5432/postgres";
+    private static final String USUARIO = "postgres.ysmescvrwtfdrxhdltch";
+    private static final String SENHA = "bibliotecaa3010202";
 
     public static Connection conectar() {
         try {
