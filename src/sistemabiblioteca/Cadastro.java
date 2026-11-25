@@ -12,17 +12,19 @@ import javax.swing.JOptionPane;
  * @author HT3080897
  */
 public class Cadastro extends javax.swing.JPanel {
+
     MenuPrincipal menu;
+
     /**
      * Creates new form Cadastro
      */
     public Cadastro() {
         initComponents();
     }
-    
-    public Cadastro(MenuPrincipal menu){
+
+    public Cadastro(MenuPrincipal menu) {
         initComponents();
-        this.menu=menu;
+        this.menu = menu;
     }
 
     /**
@@ -192,38 +194,38 @@ public class Cadastro extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    public void setFrame(JFrame f){
-    this.setContentPane(f);
-    validate();
+    public void setFrame(JFrame f) {
+        this.setContentPane(f);
+        validate();
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String ano = jTextField6.getText();
         String quantidade = jTextField8.getText();
-        if(jTextField2.getText().trim().isEmpty()
-                ||jTextField3.getText().trim().isEmpty()
-                ||jTextField4.getText().trim().isEmpty()
-                ||jTextField5.getText().trim().isEmpty()
-                ||jTextField6.getText().trim().isEmpty()
-                ||jTextField7.getText().trim().isEmpty()
-                ||jTextField8.getText().trim().isEmpty()
+        if (jTextField2.getText().trim().isEmpty()
+                || jTextField3.getText().trim().isEmpty()
+                || jTextField4.getText().trim().isEmpty()
+                || jTextField5.getText().trim().isEmpty()
+                || jTextField6.getText().trim().isEmpty()
+                || jTextField7.getText().trim().isEmpty()
+                || jTextField8.getText().trim().isEmpty()
                 || !ano.matches("[0-9]{4}")
-                || !quantidade.matches("[0-9]+")){
-            JOptionPane.showMessageDialog(null,"Preencha todos os campos corretamente!");
-        }else{
+                || !quantidade.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!");
+        } else {
             int anoLivro = Integer.parseInt(ano);
             int quantidadeDisponivel = Integer.parseInt(quantidade);
-            
+
             LivroDAO livroDAO = new LivroDAO();
-                boolean cadastrado = livroDAO.inserirLivro(
-                jTextField2.getText(),
-                jTextField3.getText(),
-                jTextField4.getText(),
-                jTextField5.getText(),
-                anoLivro,
-                jTextField7.getText(),
-                quantidadeDisponivel
+            boolean cadastrado = livroDAO.inserirLivro(
+                    jTextField2.getText(),
+                    jTextField3.getText(),
+                    jTextField4.getText(),
+                    jTextField5.getText(),
+                    anoLivro,
+                    jTextField7.getText(),
+                    quantidadeDisponivel
             );
-             
+
             if (cadastrado) {
                 JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
                 menu.voltarMenuPrincipal();
@@ -233,7 +235,7 @@ public class Cadastro extends javax.swing.JPanel {
 
         }
 
-              // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed

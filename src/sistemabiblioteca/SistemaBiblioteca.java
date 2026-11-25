@@ -14,7 +14,7 @@ public class SistemaBiblioteca {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Menu principal = new Menu();
+        MenuPrincipal principal = new MenuPrincipal();
         principal.setVisible(true);
     }
     

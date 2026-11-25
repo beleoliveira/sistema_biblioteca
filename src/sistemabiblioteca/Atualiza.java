@@ -4,12 +4,16 @@
  */
 package sistemabiblioteca;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HT3080897
  */
 public class Atualiza extends javax.swing.JPanel {
+
     MenuPrincipal menu;
+
     /**
      * Creates new form Atualiza
      */
@@ -17,9 +21,9 @@ public class Atualiza extends javax.swing.JPanel {
         initComponents();
     }
 
-     public Atualiza(MenuPrincipal menu){
+    public Atualiza(MenuPrincipal menu) {
         initComponents();
-        this.menu=menu;
+        this.menu = menu;
     }
 
     /**
@@ -32,33 +36,34 @@ public class Atualiza extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        localizacao = new javax.swing.JTextField();
+        titulo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        quantidade = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        autor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        genero = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        editora = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        ano = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(106, 84, 64));
 
         jPanel1.setBackground(new java.awt.Color(106, 84, 64));
 
-        jTextField1.setPreferredSize(new java.awt.Dimension(120, 22));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        id.setPreferredSize(new java.awt.Dimension(120, 22));
+        id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                idActionPerformed(evt);
             }
         });
 
@@ -68,9 +73,9 @@ public class Atualiza extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(230, 209, 182));
         jLabel3.setText("Nome:");
 
-        jTextField7.setPreferredSize(new java.awt.Dimension(120, 22));
+        localizacao.setPreferredSize(new java.awt.Dimension(120, 22));
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(120, 22));
+        titulo.setPreferredSize(new java.awt.Dimension(120, 22));
 
         jLabel9.setForeground(new java.awt.Color(230, 209, 182));
         jLabel9.setText("Quantidade disponível:");
@@ -78,7 +83,7 @@ public class Atualiza extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(230, 209, 182));
         jLabel4.setText("Autor:");
 
-        jTextField8.setPreferredSize(new java.awt.Dimension(120, 22));
+        quantidade.setPreferredSize(new java.awt.Dimension(120, 22));
 
         jButton1.setBackground(new java.awt.Color(43, 36, 32));
         jButton1.setFont(new java.awt.Font("Stylus BT", 1, 18)); // NOI18N
@@ -91,7 +96,7 @@ public class Atualiza extends javax.swing.JPanel {
             }
         });
 
-        jTextField3.setPreferredSize(new java.awt.Dimension(120, 22));
+        autor.setPreferredSize(new java.awt.Dimension(120, 22));
 
         jLabel1.setFont(new java.awt.Font("Papyrus", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(230, 209, 182));
@@ -100,12 +105,12 @@ public class Atualiza extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(230, 209, 182));
         jLabel5.setText("Gênero:");
 
-        jTextField4.setPreferredSize(new java.awt.Dimension(120, 22));
+        genero.setPreferredSize(new java.awt.Dimension(120, 22));
 
         jLabel6.setForeground(new java.awt.Color(230, 209, 182));
         jLabel6.setText("Editora:");
 
-        jTextField5.setPreferredSize(new java.awt.Dimension(120, 22));
+        editora.setPreferredSize(new java.awt.Dimension(120, 22));
 
         jLabel7.setForeground(new java.awt.Color(230, 209, 182));
         jLabel7.setText("Ano do livro:");
@@ -113,7 +118,18 @@ public class Atualiza extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(230, 209, 182));
         jLabel2.setText("Id do Livro:");
 
-        jTextField6.setPreferredSize(new java.awt.Dimension(120, 22));
+        ano.setPreferredSize(new java.awt.Dimension(120, 22));
+
+        jButton2.setBackground(new java.awt.Color(43, 36, 32));
+        jButton2.setFont(new java.awt.Font("Segoe UI Symbol", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 246, 232));
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setLabel("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,39 +144,42 @@ public class Atualiza extends javax.swing.JPanel {
                             .addComponent(jLabel4))
                         .addGap(5, 5, 5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(121, 121, 121)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel9))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel8))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(7, 7, 7)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel7))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(117, 117, 117)
                             .addComponent(jLabel6))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(localizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(214, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,28 +198,29 @@ public class Atualiza extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(localizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(59, 59, 59)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,18 +239,99 @@ public class Atualiza extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        menu.voltarMenuPrincipal();
+        if (titulo.getText().isEmpty()
+                || autor.getText().isEmpty()
+                || genero.getText().isEmpty()
+                || editora.getText().isEmpty()
+                || ano.getText().isEmpty()
+                || localizacao.getText().isEmpty()
+                || quantidade.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+            return;
+        }
+
+        try {
+            Livro livro = new Livro(
+                    Integer.parseInt(id.getText()),
+                    titulo.getText(),
+                    autor.getText(),
+                    genero.getText(),
+                    editora.getText(),
+                    Integer.parseInt(ano.getText()),
+                    localizacao.getText(),
+                    Integer.parseInt(quantidade.getText())
+            );
+
+            LivroDAO dao = new LivroDAO();
+
+            if (dao.atualizarLivro(livro)) {
+                JOptionPane.showMessageDialog(this, "Livro atualizado com sucesso!");
+                menu.voltarMenuPrincipal();
+            } else {
+                JOptionPane.showMessageDialog(this, "Não foi possível atualizar o livro!");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ano e quantidade devem ser números!");
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String textoId = id.getText();
+
+        if (textoId.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite o ID do livro!");
+            return;
+        }
+        int codigo;
+
+        try {
+            codigo = Integer.parseInt(textoId);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Digite um ID válido!");
+            return;
+        }
+
+        if (codigo <= 0) {
+            JOptionPane.showMessageDialog(this, "Digite um ID válido!");
+            return;
+        }
+
+        LivroDAO dao = new LivroDAO();
+        Livro livro = dao.buscarLivroPorId(codigo);
+
+        if (livro == null) {
+            JOptionPane.showMessageDialog(this, "Livro não encontrado!");
+        } else {
+            id.setEditable(false);
+            titulo.setText(livro.getNomeLivro());
+            autor.setText(livro.getNomeAutor());
+            genero.setText(livro.getGenero());
+            editora.setText(livro.getEditora());
+            ano.setText(String.valueOf(livro.getAnoLivro()));
+            localizacao.setText(livro.getLocalizacao());
+            quantidade.setText(String.valueOf(livro.getQuantidadeDisponivel()));
+
+            JOptionPane.showMessageDialog(this, "Livro encontrado!");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ano;
+    private javax.swing.JTextField autor;
+    private javax.swing.JTextField editora;
+    private javax.swing.JTextField genero;
+    private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -241,13 +342,8 @@ public class Atualiza extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField localizacao;
+    private javax.swing.JTextField quantidade;
+    private javax.swing.JTextField titulo;
     // End of variables declaration//GEN-END:variables
 }
